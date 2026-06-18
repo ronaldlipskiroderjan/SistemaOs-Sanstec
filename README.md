@@ -100,3 +100,4 @@ GET  /api/auth/me      → { id, nome, email, role, telefone }  [JWT obrigatóri
 - [ ] **Sprint 4** — Dashboard Técnico, Google Maps, deep links de rota
 - [ ] **Sprint 5** — Responsividade mobile, tratamento de erros, deploy
 # SistemaOs-Sanstec
+# SistemaOs-Sanstec
