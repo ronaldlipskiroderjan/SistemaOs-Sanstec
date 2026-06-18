@@ -1,0 +1,31 @@
+# ── Credenciais / segredos ────────────────────
+.env
+backend/src/main/resources/application-local.yml
+backend/src/main/resources/application-local.properties
+
+# ── Backend (Maven) ───────────────────────────
+backend/target/
+backend/.mvn/
+backend/*.log
+!backend/.mvn/wrapper/maven-wrapper.properties
+
+# ── Frontend (Node) ───────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.env.*.local
+
+# ── IntelliJ IDEA ─────────────────────────────
+backend/.idea/
+*.iml
+*.ipr
+*.iws
+
+# ── VS Code ───────────────────────────────────
+.vscode/
+!.vscode/extensions.json
+
+# ── OS ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.log
