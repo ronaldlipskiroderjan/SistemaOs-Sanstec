@@ -3,12 +3,12 @@ package com.sistemaos.dto;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public record ClienteResponse(
+public record UsuarioResponse(
         UUID id,
         String nome,
-        String cpfCnpj,
-        String telefone,
         String email,
-        String observacoes,
+        String role,
+        String telefone,
+        boolean ativo,
         LocalDateTime criadoEm
 ) {}

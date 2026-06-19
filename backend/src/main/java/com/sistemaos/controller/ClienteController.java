@@ -1,6 +1,7 @@
 package com.sistemaos.controller;
 
-import com.sistemaos.dto.*;
+import com.sistemaos.dto.ClienteRequest;
+import com.sistemaos.dto.ClienteResponse;
 import com.sistemaos.service.ClienteService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -45,11 +46,9 @@ public class ClienteController {
         return ResponseEntity.ok(clienteService.atualizar(id, req));
     }
 
-    @PostMapping("/{id}/equipamentos")
-    public ResponseEntity<EquipamentoResponse> adicionarEquipamento(
-            @PathVariable UUID id,
-            @RequestBody @Valid EquipamentoRequest req) {
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(clienteService.adicionarEquipamento(id, req));
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletar(@PathVariable UUID id) {
+        clienteService.deletar(id);
+        return ResponseEntity.noContent().build();
     }
 }

@@ -24,13 +24,13 @@ public class DataInitializer implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
-        String adminEmail = "admin@sistemaos.com";
+        String adminEmail = "ronald@dev.com";
         try {
             if (!usuarioRepository.existsByEmail(adminEmail)) {
                 Usuario admin = new Usuario();
                 admin.setNome("Administrador");
                 admin.setEmail(adminEmail);
-                admin.setSenhaHash(passwordEncoder.encode("admin123"));
+                admin.setSenhaHash(passwordEncoder.encode("3010"));
                 admin.setRole(Usuario.Role.ADMIN);
                 admin.setAtivo(true);
                 usuarioRepository.save(admin);

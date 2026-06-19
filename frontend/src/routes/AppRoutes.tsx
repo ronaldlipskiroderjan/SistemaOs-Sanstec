@@ -3,8 +3,11 @@ import { AuthProvider } from '../contexts/AuthContext'
 import { PrivateRoute } from './PrivateRoute'
 import { Login } from '../pages/Login'
 import { AdminDashboard } from '../pages/admin/Dashboard'
-import { ClientesPage } from '../pages/admin/ClientesPage'
+import { AreaTrabalho } from '../pages/admin/AreaTrabalho'
 import { ClienteFormPage } from '../pages/admin/ClienteFormPage'
+import { OrdemFormPage } from '../pages/admin/OrdemFormPage'
+import { OrdemDetailPage } from '../pages/admin/OrdemDetailPage'
+import { UsuariosPage } from '../pages/admin/UsuariosPage'
 import { TecnicoDashboard } from '../pages/tecnico/Dashboard'
 import { useAuth } from '../hooks/useAuth'
 
@@ -24,9 +27,13 @@ export function AppRoutes() {
 
           <Route element={<PrivateRoute allowedRoles={['ADMIN']} />}>
             <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="/admin/clientes" element={<ClientesPage />} />
+            <Route path="/admin/trabalho" element={<AreaTrabalho />} />
             <Route path="/admin/clientes/novo" element={<ClienteFormPage />} />
             <Route path="/admin/clientes/:id/editar" element={<ClienteFormPage />} />
+            <Route path="/admin/ordens/nova" element={<OrdemFormPage />} />
+            <Route path="/admin/ordens/:id" element={<OrdemDetailPage />} />
+            <Route path="/admin/ordens/:id/editar" element={<OrdemFormPage />} />
+            <Route path="/admin/usuarios" element={<UsuariosPage />} />
           </Route>
 
           <Route element={<PrivateRoute allowedRoles={['TECNICO']} />}>

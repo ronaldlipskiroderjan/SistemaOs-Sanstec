@@ -26,7 +26,7 @@ export function ClientesPage() {
         <h2 className="text-2xl font-bold text-gray-800">Clientes</h2>
         <button
           onClick={() => navigate('/admin/clientes/novo')}
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
+          className="bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors"
         >
           + Novo Cliente
         </button>
@@ -39,7 +39,7 @@ export function ClientesPage() {
             placeholder="Buscar por nome, CPF/CNPJ ou telefone..."
             value={busca}
             onChange={e => setBusca(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           />
         </div>
 
@@ -67,8 +67,7 @@ export function ClientesPage() {
                   <th className="px-4 py-3 text-left">Nome</th>
                   <th className="px-4 py-3 text-left hidden sm:table-cell">CPF / CNPJ</th>
                   <th className="px-4 py-3 text-left hidden md:table-cell">Telefone</th>
-                  <th className="px-4 py-3 text-left hidden lg:table-cell">Cidade</th>
-                  <th className="px-4 py-3 text-center">Equip.</th>
+                  <th className="px-4 py-3 text-left hidden lg:table-cell">E-mail</th>
                   <th className="px-4 py-3 text-right">Ações</th>
                 </tr>
               </thead>
@@ -88,17 +87,12 @@ export function ClientesPage() {
                       {c.telefone || '—'}
                     </td>
                     <td className="px-4 py-3 text-gray-500 hidden lg:table-cell">
-                      {c.endereco ? `${c.endereco.cidade} / ${c.endereco.estado}` : '—'}
-                    </td>
-                    <td className="px-4 py-3 text-center">
-                      <span className="bg-gray-100 text-gray-600 rounded-full px-2 py-0.5 text-xs font-medium">
-                        {c.equipamentos.length}
-                      </span>
+                      {c.email || '—'}
                     </td>
                     <td className="px-4 py-3 text-right">
                       <button
                         onClick={() => navigate(`/admin/clientes/${c.id}/editar`)}
-                        className="text-blue-600 hover:text-blue-800 text-xs font-medium transition-colors"
+                        className="text-orange-500 hover:text-orange-700 text-xs font-medium transition-colors"
                       >
                         Editar
                       </button>

@@ -55,7 +55,7 @@ export function Login() {
               required
               autoFocus
               className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm
-                         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                         focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               placeholder="seu@email.com"
             />
           </div>
@@ -70,7 +70,7 @@ export function Login() {
               onChange={e => setSenha(e.target.value)}
               required
               className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm
-                         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                         focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               placeholder="••••••••"
             />
           </div>
@@ -82,7 +82,7 @@ export function Login() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium
+            className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium
                        rounded-lg py-2 text-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? 'Entrando...' : 'Entrar'}

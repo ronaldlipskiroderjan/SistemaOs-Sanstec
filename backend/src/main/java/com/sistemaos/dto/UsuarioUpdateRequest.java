@@ -2,10 +2,8 @@ package com.sistemaos.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
-public record ClienteRequest(
+public record UsuarioUpdateRequest(
         @NotBlank String nome,
-        String cpfCnpj,
         String telefone,
-        String email,
-        String observacoes
+        Boolean ativo
 ) {}

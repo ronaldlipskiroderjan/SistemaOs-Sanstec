@@ -1,28 +1,12 @@
-import axiosClient from './axiosClient'
-import { Cliente, Equipamento } from '../types'
+import { axiosClient } from './axiosClient'
+import { Cliente } from '../types'
 
 export interface ClientePayload {
   nome: string
   cpfCnpj?: string
   telefone?: string
   email?: string
-  endereco?: {
-    logradouro: string
-    numero: string
-    complemento?: string
-    bairro: string
-    cidade: string
-    estado: string
-    cep: string
-  }
   observacoes?: string
-}
-
-export interface EquipamentoPayload {
-  tipo: string
-  marca?: string
-  modelo?: string
-  numeroSerie?: string
 }
 
 export const clientesApi = {
@@ -38,6 +22,6 @@ export const clientesApi = {
   atualizar: (id: string, data: ClientePayload): Promise<Cliente> =>
     axiosClient.put(`/api/clientes/${id}`, data).then(r => r.data),
 
-  adicionarEquipamento: (clienteId: string, data: EquipamentoPayload): Promise<Equipamento> =>
-    axiosClient.post(`/api/clientes/${clienteId}/equipamentos`, data).then(r => r.data),
+  deletar: (id: string): Promise<void> =>
+    axiosClient.delete(`/api/clientes/${id}`).then(() => undefined),
 }
